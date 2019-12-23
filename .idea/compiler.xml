@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-microservicecloudapi" />
+        <module name="springcloud-microservicecloudconfig3344" />
+        <module name="springcloud-microservicecloudconfigclient3355" />
+        <module name="springcloud-microservicecloudconfigdeptclient8001" />
+        <module name="springcloud-microservicecloudconfigeurekaclient7001" />
+        <module name="springcloud-microservicecloudconsumerdept80" />
+        <module name="springcloud-microservicecloudconsumerdeptfeign" />
+        <module name="springcloud-microservicecloudconsumerhystrixdashboard" />
+        <module name="springcloud-microservicecloudeureka7001" />
+        <module name="springcloud-microservicecloudeureka7002" />
+        <module name="springcloud-microservicecloudeureka7003" />
+        <module name="springcloud-microservicecloudproviderdept8001" />
+        <module name="springcloud-microservicecloudproviderdept8002" />
+        <module name="springcloud-microservicecloudproviderdept8003" />
+        <module name="springcloud-microservicecloudproviderdepthystrix8001" />
+        <module name="springcloud-microservicecloudzuulgateway9527" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-microservicecloud" target="1.8" />
+      <module name="springcloud-microservicecloudapi" target="1.8" />
+      <module name="springcloud-microservicecloudconfig3344" target="1.8" />
+      <module name="springcloud-microservicecloudconfigclient3355" target="1.8" />
+      <module name="springcloud-microservicecloudconfigdeptclient8001" target="1.8" />
+      <module name="springcloud-microservicecloudconfigeurekaclient7001" target="1.8" />
+      <module name="springcloud-microservicecloudconsumerdept80" target="1.8" />
+      <module name="springcloud-microservicecloudconsumerdeptfeign" target="1.8" />
+      <module name="springcloud-microservicecloudconsumerhystrixdashboard" target="1.8" />
+      <module name="springcloud-microservicecloudeureka7001" target="1.8" />
+      <module name="springcloud-microservicecloudeureka7002" target="1.8" />
+      <module name="springcloud-microservicecloudeureka7003" target="1.8" />
+      <module name="springcloud-microservicecloudproviderdept8001" target="1.8" />
+      <module name="springcloud-microservicecloudproviderdept8002" target="1.8" />
+      <module name="springcloud-microservicecloudproviderdept8003" target="1.8" />
+      <module name="springcloud-microservicecloudproviderdepthystrix8001" target="1.8" />
+      <module name="springcloud-microservicecloudzuulgateway9527" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

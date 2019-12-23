@@ -1,0 +1,13 @@
+# 80 端口是为 HTTP(HyperText Transport Protocol)即超文本传输协议开放的，此为上网冲浪使用次数最多的协议，主要用于 WWW(World Wide Web)即万维网传输信息的协议。
+# 可以通过 HTTP 地址(即网址)加 :80 来访问网站，浏览网页服务默认的端口号都是 80，因此只需输入网址即可，不用输入 :80 了。
+server:
+  port: 80
+
+# 消费者(Eureka Client)不直接访问生产者(Eureka Client)获取服务，而是通过访问 Rureka Server 实现负载均衡(Ribbon Client)获取服务
+eureka:
+  client:
+    # false 表示不向注册中心注册自己。
+    register-with-eureka: false
+    # 设置与 Eureka Server 交互的地址查询服务和注册服务依赖的地址
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/

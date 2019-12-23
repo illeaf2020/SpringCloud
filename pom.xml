@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.chxp</groupId>
+    <artifactId>microservicecloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- module 指定子模块 -->
+    <modules>
+        <module>springcloud-microservicecloudapi</module>
+        <module>springcloud-microservicecloudproviderdept8001</module>
+        <module>springcloud-microservicecloudconsumerdept80</module>
+        <module>springcloud-microservicecloudeureka7001</module>
+        <module>springcloud-microservicecloudeureka7002</module>
+        <module>springcloud-microservicecloudeureka7003</module>
+        <module>springcloud-microservicecloudproviderdept8002</module>
+        <module>springcloud-microservicecloudproviderdept8003</module>
+        <module>springcloud-microservicecloudconsumerdeptfeign</module>
+        <module>springcloud-microservicecloudproviderdepthystrix8001</module>
+        <module>springcloud-microservicecloudconsumerhystrixdashboard</module>
+        <module>springcloud-microservicecloudzuulgateway9527</module>
+        <module>springcloud-microservicecloudconfig3344</module>
+        <module>springcloud-microservicecloudconfigclient3355</module>
+        <module>springcloud-microservicecloudconfigeurekaclient7001</module>
+        <module>springcloud-microservicecloudconfigdeptclient8001</module>
+    </modules>
+
+    <!-- pom -->
+    <packaging>pom</packaging>
+
+    <!-- 定义 POM 文件，将后续各个子模块公用的 jar 包等统一提出来，类似于一个 抽象父类 -->
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Java 运行版本 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.16.18</lombok.version>
+    </properties>
+
+    <!-- <dependencyManagement> 父类工程的管理机制 -->
+    <dependencyManagement>
+        <!-- 父项目有的依赖子项目都会有 -->
+        <dependencies>
+
+            <!-- SpringCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.9.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 数据库连接池 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.18</version>
+            </dependency>
+
+            <!-- 数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.31</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <!-- ${junit.version} 对应 <properties> 里面的相应版本 -->
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <!-- ${log4j.version} 对应 <properties> 里面的相应版本 -->
+                <version>${log4j.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+        <!-- 父工程名称 -->
+        <finalName>microservicecloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- 开启过滤 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+
+            <!-- 插件(负责解析配置文件) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <!-- 读取在 src/main/resources 路径下的配置文件中 ${...} 的信息 -->
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

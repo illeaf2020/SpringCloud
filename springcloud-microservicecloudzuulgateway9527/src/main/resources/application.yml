@@ -1,0 +1,32 @@
+server:
+  port: 9527
+
+spring:
+  # 微服务客户端入驻服务端名称
+  application:
+    name: microservicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    # 自定义服务器名称
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+
+# info 的配置信息
+info:
+  app.name: chxp-microservicecloud
+  company.name: www.chxp.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+zuul:
+  prefix: /chxp
+  ignored-services: microservicecloud-dept
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+

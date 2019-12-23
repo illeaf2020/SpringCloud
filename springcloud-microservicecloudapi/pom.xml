@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <!-- 子类里面显示声明才能有明确的继承表现，无意外就是父类的默认版本否则自己定义版本 -->
+        <artifactId>microservicecloud</artifactId>
+        <groupId>com.chxp</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 封装的整体 entity / 接口 / 公共配置 等 -->
+
+    <!-- 当前 Module 名字 -->
+    <artifactId>microservicecloud-api</artifactId>
+    <!-- jar -->
+    <packaging>jar</packaging>
+
+    <!--
+        当前 Module 需要用到的jar包
+        父项目有的依赖子项目都会有
+        如果父类已指定版本号则可以不用写版本号(继承于父类)
+    -->
+    <dependencies>
+
+        <!-- Feign 相关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+
+        <!-- 通过简单注解来实现精简代码来达到消除冗长代码 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

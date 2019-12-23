@@ -1,0 +1,14 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name:  microservicecloud-config
+  cloud:
+    config:
+      server:
+        git:
+          # GitHub 仓库地址
+          uri: https://github.com/LaityCHXP/microservicecloud-config.git
+
+

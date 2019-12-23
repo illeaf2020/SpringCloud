@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chxp.dao.DeptDao">
+
+    <!--public boolean addDept(Dept dept);-->
+    <!-- DATABASE() -->
+    <insert id="addDept" parameterType="com.chxp.entity.Dept">
+        INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE());
+    </insert>
+
+    <!--public Dept findById(Long id);-->
+    <!-- parameterType="Long" -->
+    <select id="findById" resultType="Dept" parameterType="Long">
+        SELECT deptno,dname,db_source FROM dept WHERE deptno=#{deptno};
+    </select>
+
+    <!--public List<Dept> findAll();-->
+    <!-- resultType="Dept" -->
+    <select id="findAll" resultType="com.chxp.entity.Dept">
+        SELECT deptno,dname,db_source FROM dept;
+    </select>
+
+</mapper>
